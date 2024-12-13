@@ -1,24 +1,27 @@
-import type { Metadata } from "next";
-import { Provider } from "@/components/ui/provider"
-import { ColorModeButton } from "@/components/ui/color-mode"
 import './globals.css'
 
+import type { Metadata } from 'next'
+
+import { ColorModeButton } from '@/components/ui/color-mode'
+import { Provider } from '@/components/ui/provider'
+
 export const metadata: Metadata = {
-  title: "Tabela"
-};
+  title: 'Tabela',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html suppressHydrationWarning lang="pt-br">
       <body className="layout">
         <Provider>
           <ColorModeButton />
-          {children}</Provider>
+          {children}
+        </Provider>
       </body>
     </html>
-  );
+  )
 }
